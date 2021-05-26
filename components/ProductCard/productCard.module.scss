@@ -1,0 +1,44 @@
+.productCard {
+  padding: 1.6rem;
+  border: 1px solid var(--c1D);
+  border-radius: 1.2rem;
+}
+
+.productImg {
+  width: 100%;
+  margin-bottom: 1.6rem;
+  position: relative;
+
+  & .img {
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+}
+
+.title {
+  font: var(--f5);
+}
+
+.desc {
+  font: var(--caption);
+  margin-bottom: 1.6rem;
+}
+
+.lowerSec {
+  display: flex;
+  justify-content: space-between;
+
+  & .price {
+    display: flex;
+    flex-flow: column wrap;
+
+    & .currPrice {
+      font: var(--f4);
+    }
+
+    & .oldPrice {
+      font: var(--f6);
+      text-decoration: line-through;
+    }
+  }
+}
