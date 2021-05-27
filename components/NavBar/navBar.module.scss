@@ -1,0 +1,67 @@
+.navBar {
+  display: flex;
+  flex-flow: column nowrap;
+
+  & .upper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--c1E);
+    padding: 1.6rem 0;
+
+    & .left {
+      display: flex;
+      gap: 3rem;
+      & .phone {
+        font: var(--caption);
+      }
+
+      & .mail {
+        font: var(--caption);
+      }
+    }
+
+    & .right {
+      & .link {
+        font: var(--caption);
+        color: var(--c2A);
+      }
+
+      & :not(.link:last-child) {
+        margin-right: 3.8rem;
+      }
+    }
+  }
+
+  & .middle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 4rem 0;
+
+    & .logo {
+      color: var(--c1A);
+      font: var(--f2);
+    }
+
+    & .search {
+      flex: 1;
+      width: 60%;
+      max-width: 80rem;
+
+      & input {
+        width: 100%;
+        color: var(--c1C);
+        font: var(--body);
+        border: 1px solid var(--c1D);
+        border-radius: 1.2rem;
+        padding: 1.2rem 1.4rem;
+        background-color: var(--c1G);
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
