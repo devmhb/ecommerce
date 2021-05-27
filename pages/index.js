@@ -1,4 +1,5 @@
 import Head from "next/head";
+import BannersContainer from "../components/BannersContainer/BannersContainer";
 import NavBar from "../components/NavBar/NavBar";
 import ProductsContainer from "../components/ProductsContainer/ProductsContainer";
 
@@ -10,6 +11,7 @@ export default function Home() {
       </Head>
       <NavBar />
       <ProductsContainer />
+      <BannersContainer />
     </>
   );
 }
