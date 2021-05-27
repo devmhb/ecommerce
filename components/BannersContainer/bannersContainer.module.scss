@@ -1,0 +1,9 @@
+.bannersContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3rem;
+
+  & > * {
+    flex: 1 50%;
+  }
+}
