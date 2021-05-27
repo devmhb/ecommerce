@@ -3,8 +3,9 @@
   flex-flow: row wrap;
   justify-content: center;
   gap: 3rem;
+  margin-bottom: 6rem;
 }
 
 .productsContainer > * {
-  flex: 0 26rem;
+  flex: 1 26rem;
 }

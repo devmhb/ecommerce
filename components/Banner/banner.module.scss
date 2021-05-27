@@ -1,8 +1,7 @@
 .banner {
   border-radius: 1.2rem;
   padding: 5rem 3.3rem;
-  background-color: var(--c2E);
-  background-image: url("../../public/banner.jpg");
+  background: url("../../public/banner.png"), var(--c2E);
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
