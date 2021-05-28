@@ -28,20 +28,24 @@ const ProductDetails = () => {
               Tomisso and his family are giving a full love to his Bio products.
               Tomisso’s carrots are growing on the fields naturally.
             </p>
-            <table className={styles.info}>
-              <tr>
-                <td>SKU:</td>
-                <td>0X23B89</td>
-                <td>Brand</td>
-                <td>Pran</td>
-              </tr>
-              <tr>
-                <td>Stock</td>
-                <td>In Stock</td>
-                <td>Delivery</td>
-                <td>in 2 days</td>
-              </tr>
-            </table>
+            <div className={styles.info}>
+              <ul>
+                <li>SKU: </li>
+                <li>Stock: </li>
+              </ul>
+              <ul>
+                <li>0X23B89</li>
+                <li>In Stock</li>
+              </ul>
+              <ul>
+                <li>Brand: </li>
+                <li>Delivery: </li>
+              </ul>
+              <ul>
+                <li>RFL</li>
+                <li>in 2 days</li>
+              </ul>
+            </div>
             <div className={styles.middle}>
               <div className={styles.price}>
                 <p className={styles.currPrice}>39 USD</p>
@@ -49,9 +53,10 @@ const ProductDetails = () => {
               </div>
               <button className="btn btn-colored btn-s">Add to cart</button>
             </div>
-            <div className={styles.wishList}>
-              <button className="btn btn-simple btn-s">Add to wish list</button>
-            </div>
+            <button className={styles.wishListBtn}>
+              <Image src="/icons/ic-actions-heart.svg" width={20} height={20} />
+              Add to wish list
+            </button>
             <p className={styles.desc}>Description</p>
             <p className={styles.lDesc}>
               We work hard to ensure that the fruit and vegetables we sell are

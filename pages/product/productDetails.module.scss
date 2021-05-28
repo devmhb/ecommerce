@@ -6,6 +6,7 @@
   & .productDetails {
     margin: 2rem 0;
     display: flex;
+    flex-flow: row wrap;
     align-items: flex-start;
     justify-content: center;
 
@@ -25,11 +26,32 @@
         margin: 1.6rem 0 2rem;
       }
 
+      & .info {
+        display: flex;
+        font: var(--body);
+
+        & ul {
+          margin-right: 4rem;
+
+          &:nth-child(2n + 1) {
+            margin-right: 0.8rem;
+          }
+
+          & li {
+            list-style: none;
+            margin: 1rem 0;
+          }
+        }
+      }
+
       & .middle {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 2rem;
+        margin: 2rem 0;
+        padding: 1.6rem;
+        border: 1px solid var(--c1F);
+        border-radius: 1.2rem;
 
         & .price {
           & .currPrice {
@@ -43,6 +65,15 @@
             text-decoration: line-through;
           }
         }
+      }
+
+      & .wishListBtn {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        font: var(--button);
+        cursor: pointer;
+        gap: 0.5rem;
       }
 
       & .desc {
