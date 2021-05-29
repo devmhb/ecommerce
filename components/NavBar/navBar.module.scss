@@ -11,25 +11,23 @@
 
     & .left {
       display: flex;
-      gap: 3rem;
-      & .phone {
+      
+      & .item {
+        list-style: none;
         font: var(--caption);
-      }
-
-      & .mail {
-        font: var(--caption);
+        margin-right: 3rem;
       }
     }
 
     & .right {
-      & .link {
+      display: flex;
+
+      & .item {
+        list-style: none;
         font: var(--caption);
-        color: var(--c2A);
+        margin-left: 3rem;
       }
 
-      & :not(.link:last-child) {
-        margin-right: 3.8rem;
-      }
     }
   }
 

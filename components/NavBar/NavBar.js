@@ -7,21 +7,27 @@ const NavBar = () => {
   return (
     <nav className={styles.navBar}>
       <div className={styles.upper}>
-        <div className={styles.left}>
-          <p className={styles.phone}>+420 336 775 664</p>
-          <p className={styles.mail}>info@freshnesecom.com</p>
-        </div>
-        <div className={styles.right}>
+        <ul className={styles.left}>
+          <li className={styles.item}>+420 336 775 664</li>
+          <li className={styles.item}>info@freshnesecom.com</li>
+        </ul>
+        <ul className={styles.right}>
+          <li className={styles.item}>
           <Link href="/blog">
             <a className={styles.link}>Blog</a>
           </Link>
+          </li>
+          <li className={styles.item}>
           <Link href="/about">
             <a className={styles.link}>About</a>
           </Link>
+          </li>
+          <li className={styles.item}>
           <Link href="/contact">
             <a className={styles.link}>Contact</a>
           </Link>
-        </div>
+          </li>
+        </ul>
       </div>
       <div className={styles.middle}>
         <Link href="/">
@@ -37,7 +43,7 @@ const NavBar = () => {
         </div>
         <div className={styles.navIcons}>
           <div className={styles.icon}>
-            <Link href="">
+            <Link href="/account">
               <Image src="/icons/ic-actions-user.svg" width={25} height={25} />
             </Link>
           </div>
