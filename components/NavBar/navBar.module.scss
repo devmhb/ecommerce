@@ -37,7 +37,9 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     padding: 4rem 0;
+    margin-bottom: 2rem;
 
     & .logo {
       color: var(--c1A);
@@ -61,6 +63,14 @@
         &:focus {
           outline: none;
         }
+      }
+    }
+
+    & .navIcons {
+      & .icon {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 2.5rem;
       }
     }
   }

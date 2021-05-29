@@ -25,7 +25,7 @@ const NavBar = () => {
       </div>
       <div className={styles.middle}>
         <Link href="/">
-          <a className={styles.logo}>Logo</a>
+          <a className={styles.logo}>AMAZON</a>
         </Link>
         <div className={styles.search}>
           <input
@@ -36,13 +36,22 @@ const NavBar = () => {
           />
         </div>
         <div className={styles.navIcons}>
-          <Link href="">
-            <Image src="/public/icons/ic-actions-user.svg" layout="fill" />
-          </Link>
-          <Link href="">Icon</Link>
+          <div className={styles.icon}>
+            <Link href="">
+              <Image src="/icons/ic-actions-user.svg" width={25} height={25} />
+            </Link>
+          </div>
+          <div className={styles.icon}>
+            <Link href="">
+              <Image
+                src="/icons/ic-ecommerce-basket.svg"
+                width={30}
+                height={30}
+              />
+            </Link>
+          </div>
         </div>
       </div>
-      <div className={styles.lower}></div>
     </nav>
   );
 };

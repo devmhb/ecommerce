@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 8rem;
+
+  & .col {
+    & .title {
+      font: var(--f4);
+      margin-bottom: 1.8rem;
+    }
+
+    & .items {
+      display: flex;
+      flex-flow: column nowrap;
+
+      & .item {
+        margin-bottom: 1.4rem;
+        list-style: none;
+        color: var(--c2A);
+        font: var(--body);
+      }
+    }
+  }
+
+  & .copyright {
+    width: 100%;
+    font: var(--body);
+    color: var(--c1A);
+    margin: 4rem 0;
+  }
+}

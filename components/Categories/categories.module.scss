@@ -1,0 +1,25 @@
+.categories {
+  flex: 0 auto;
+
+  & .title {
+    font: var(--f4);
+    color: var(--c1A);
+    margin-bottom: 1.8rem;
+  }
+
+  & .items {
+    display: flex;
+    flex-flow: column nowrap;
+
+    & .item {
+      margin-bottom: 1.4rem;
+      list-style: none;
+
+      & a {
+        font: var(--body);
+        color: var(--c2A);
+        text-decoration: underline;
+      }
+    }
+  }
+}
