@@ -1,11 +1,18 @@
 import React from "react";
+import Head from "next/head";
+import styles from "./contact.module.scss"
 
-const index = () => {
+const Contact = () => {
   return (
-    <div>
-      <h1>Contact</h1>
-    </div>
+    <>
+      <Head>
+        <title>Contact</title>
+      </Head>
+      <div className={styles.contact}>
+        <h1>Contact</h1>
+      </div>
+    </>
   );
 };
 
-export default index;
+export default Contact;
