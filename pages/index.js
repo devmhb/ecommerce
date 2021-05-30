@@ -20,11 +20,11 @@ export default function Home() {
           <BannersContainer />
         </div>
         <h4 className={styles.title}>Best selling products</h4>
-        <ProductsContainer />
+        <ProductsContainer category="one" />
         <h4 className={styles.title}>Best from Farmers</h4>
-        <ProductsContainer />
+        <ProductsContainer category="five" />
         <h4 className={styles.title}>Digital Goods</h4>
-        <ProductsContainer />
+        <ProductsContainer category="two" />
         {/* <QuoteCard /> */}
         <Footer />
       </div>

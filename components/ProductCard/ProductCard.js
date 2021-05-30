@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./productCard.module.scss";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const tagStyles = {
     position: "absolute",
     top: "0",
@@ -25,14 +25,12 @@ const ProductCard = () => {
           height={840}
         />
       </div>
-      <h3 className={styles.title}>Lorem, ipsum dolor.</h3>
-      <p className={styles.desc}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-      </p>
+      <h3 className={styles.title}>{product.name}</h3>
+      <p className={styles.desc}>{product.s_desc}</p>
       <div className={styles.lowerSec}>
         <div className={styles.price}>
-          <p className={styles.currPrice}>36.9 USD</p>
-          <p className={styles.oldPrice}>48.9 USD</p>
+          <p className={styles.currPrice}>{product.price} USD</p>
+          <p className={styles.oldPrice}>{product.old_price} USD</p>
         </div>
         <button className="btn btn-colored btn-s">Buy now</button>
       </div>
