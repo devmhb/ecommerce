@@ -5,6 +5,7 @@ import styles from "../../styles/Category.module.scss";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
+import products from "../../products.json";
 
 const Category = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const Category = () => {
             doloremque iste quam.
           </p>
         </header>
-        <ProductsContainer />
+        <ProductsContainer category={category} />
         <Footer />
       </div>
     </>

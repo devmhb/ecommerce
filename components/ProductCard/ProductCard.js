@@ -23,8 +23,8 @@ const ProductCard = ({ product }) => {
             className={styles.img}
             src="/macbook.jpeg"
             alt="product"
-            width={904}
-            height={840}
+            width={1000}
+            height={1000}
           />
         </div>
         <h3 className={styles.title}>{product.name}</h3>
