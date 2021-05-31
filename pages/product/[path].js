@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const router = useRouter();
   const { path } = router.query;
 
-  const specificProduct = products.find(product => product.slug === path);
+  const specificProduct = products.find((product) => product.slug === path);
 
   return (
     <>
@@ -20,15 +20,13 @@ const ProductDetails = () => {
       </Head>
       <div className={styles.container}>
         <NavBar />
-        <dev className={styles.productDetails}>
+        <div className={styles.productDetails}>
           <div className={styles.slider}>
             <Image src="/macbook.jpeg" width={500} height={500} />
           </div>
           <div className={styles.details}>
             <h1 className={styles.title}>{specificProduct.name}</h1>
-            <p className={styles.sDesc}>
-              {specificProduct.s_desc}
-            </p>
+            <p className={styles.sDesc}>{specificProduct.s_desc}</p>
             <div className={styles.info}>
               <ul>
                 <li>SKU: </li>
@@ -50,7 +48,9 @@ const ProductDetails = () => {
             <div className={styles.middle}>
               <div className={styles.price}>
                 <p className={styles.currPrice}>{specificProduct.price} USD</p>
-                <p className={styles.oldPrice}>{specificProduct.old_price} USD</p>
+                <p className={styles.oldPrice}>
+                  {specificProduct.old_price} USD
+                </p>
               </div>
               <button className="btn btn-colored btn-s">Add to cart</button>
             </div>
@@ -59,11 +59,9 @@ const ProductDetails = () => {
               Add to wish list
             </button>
             <p className={styles.desc}>Description</p>
-            <p className={styles.lDesc}>
-              {specificProduct.l_desc}
-            </p>
+            <p className={styles.lDesc}>{specificProduct.l_desc}</p>
           </div>
-        </dev>
+        </div>
         <Footer />
       </div>
     </>

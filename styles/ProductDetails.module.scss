@@ -12,6 +12,8 @@
 
     & .slider {
       flex: 1 50%;
+      display: flex;
+      justify-content: center;
     }
 
     & .details {

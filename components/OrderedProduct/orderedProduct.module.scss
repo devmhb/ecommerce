@@ -1,0 +1,52 @@
+.orderedProduct {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: white;
+  border: 1px solid var(--c1D);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
+
+  & .leftSec {
+    flex: 0 auto;
+    overflow: hidden;
+  }
+
+  & .middleSec {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    & .title {
+      font: var(--f4);
+      margin-bottom: 1rem;
+    }
+
+    & .subTitle {
+      font: var(--caption);
+    }
+
+    & .quantity {
+      display: inline-block;
+      font: var(--f5);
+    }
+  }
+
+  & .rightSec {
+    flex: 0 auto;
+    padding: 3rem 5rem;
+
+    & .price {
+      font: var(--f4);
+    }
+
+    & .oldPrice {
+      text-decoration: line-through;
+      font: var(--f6);
+      text-align: right;
+      color: var(--c1C);
+    }
+  }
+}
