@@ -14,10 +14,12 @@
       flex: 1 50%;
       display: flex;
       justify-content: center;
+      padding-right: 2rem;
     }
 
     & .details {
       flex: 1 50%;
+      padding-left: 2rem;
 
       & .title {
         font: var(--f1);

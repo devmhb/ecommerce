@@ -13,9 +13,13 @@
   flex-flow: column nowrap;
   align-items: center;
 
-  & .img {
+  & .imgWrapper {
     border-radius: 1.2rem;
     overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
   }
 }
 

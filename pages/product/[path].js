@@ -6,6 +6,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Image from "next/image";
 import Footer from "../../components/Footer/Footer";
 import products from "../../products.json";
+import { fromImgToUrl } from "../../utils/urls";
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -22,7 +23,7 @@ const ProductDetails = () => {
         <NavBar />
         <div className={styles.productDetails}>
           <div className={styles.slider}>
-            <Image src="/macbook.jpeg" width={500} height={500} />
+            <img src={fromImgToUrl(specificProduct.product_img)} />
           </div>
           <div className={styles.details}>
             <h1 className={styles.title}>{specificProduct.name}</h1>

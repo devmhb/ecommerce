@@ -11,7 +11,7 @@
 
     & .left {
       display: flex;
-      
+
       & .item {
         list-style: none;
         font: var(--caption);
@@ -27,7 +27,6 @@
         font: var(--caption);
         margin-left: 3rem;
       }
-
     }
   }
 
@@ -38,6 +37,8 @@
     align-items: center;
     padding: 4rem 0;
     margin-bottom: 2rem;
+    // position: sticky;
+    // top: 0;
 
     & .logo {
       color: var(--c1A);

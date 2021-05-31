@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./productCard.module.scss";
 import Link from "next/link";
+import { fromImgToUrl } from "../../utils/urls";
 
 const ProductCard = ({ product }) => {
   const tagStyles = {
@@ -12,6 +13,8 @@ const ProductCard = ({ product }) => {
     margin: "1.2rem",
   };
 
+  console.log(product.product_img.url);
+
   return (
     <Link href={`/product/${product.slug}`}>
       <div className={styles.productCard}>
@@ -19,13 +22,13 @@ const ProductCard = ({ product }) => {
           <div className="tag tag-colored tag-s" style={tagStyles}>
             - 36%
           </div>
-          <Image
-            className={styles.img}
-            src="/macbook.jpeg"
-            alt="product"
-            width={1000}
-            height={1000}
-          />
+          <div className={styles.imgWrapper}>
+            <img
+              className={styles.img}
+              src={fromImgToUrl(product.product_img)}
+              alt="product"
+            />
+          </div>
         </div>
         <h3 className={styles.title}>{product.name}</h3>
         <p className={styles.desc}>{product.s_desc}</p>
