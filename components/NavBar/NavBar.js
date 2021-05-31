@@ -13,19 +13,19 @@ const NavBar = () => {
         </ul>
         <ul className={styles.right}>
           <li className={styles.item}>
-          <Link href="/blog">
-            <a className={styles.link}>Blog</a>
-          </Link>
+            <Link href="/blog">
+              <a className={styles.link}>Blog</a>
+            </Link>
           </li>
           <li className={styles.item}>
-          <Link href="/about">
-            <a className={styles.link}>About</a>
-          </Link>
+            <Link href="/about">
+              <a className={styles.link}>About</a>
+            </Link>
           </li>
           <li className={styles.item}>
-          <Link href="/contact">
-            <a className={styles.link}>Contact</a>
-          </Link>
+            <Link href="/contact">
+              <a className={styles.link}>Contact</a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -48,7 +48,7 @@ const NavBar = () => {
             </Link>
           </div>
           <div className={styles.icon}>
-            <Link href="">
+            <Link href="/cart">
               <Image
                 src="/icons/ic-ecommerce-basket.svg"
                 width={30}

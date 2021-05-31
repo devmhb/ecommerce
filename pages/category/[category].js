@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import styles from "./category.module.scss";
+import styles from "../../styles/Category.module.scss";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";

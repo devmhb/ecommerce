@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import styles from "./productDetails.module.scss";
+import styles from "../../styles/ProductDetails.module.scss";
 import NavBar from "../../components/NavBar/NavBar";
 import Image from "next/image";
 import Footer from "../../components/Footer/Footer";
@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer";
 const ProductDetails = () => {
   const router = useRouter();
   const { pId } = router.query;
-
+  console.log(pId);
   return (
     <>
       <Head>

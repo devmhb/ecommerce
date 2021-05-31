@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import styles from "./about.module.scss"
+import styles from "../../styles/About.module.scss";
 
 const About = () => {
   return (
