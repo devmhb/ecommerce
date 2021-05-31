@@ -5,15 +5,18 @@ import styles from "../../styles/ProductDetails.module.scss";
 import NavBar from "../../components/NavBar/NavBar";
 import Image from "next/image";
 import Footer from "../../components/Footer/Footer";
+import products from "../../products.json";
 
 const ProductDetails = () => {
   const router = useRouter();
-  const { pId } = router.query;
-  console.log(pId);
+  const { path } = router.query;
+
+  const specificProduct = products.find(product => product.slug === path);
+
   return (
     <>
       <Head>
-        <title>Ecommerce Product Details</title>
+        <title>{specificProduct.name}</title>
       </Head>
       <div className={styles.container}>
         <NavBar />
@@ -22,11 +25,9 @@ const ProductDetails = () => {
             <Image src="/macbook.jpeg" width={500} height={500} />
           </div>
           <div className={styles.details}>
-            <h1 className={styles.title}>Carrots from Tomissy Farm</h1>
+            <h1 className={styles.title}>{specificProduct.name}</h1>
             <p className={styles.sDesc}>
-              Carrots from Tomissy Farm are one of the best on the market.
-              Tomisso and his family are giving a full love to his Bio products.
-              Tomisso’s carrots are growing on the fields naturally.
+              {specificProduct.s_desc}
             </p>
             <div className={styles.info}>
               <ul>
@@ -48,8 +49,8 @@ const ProductDetails = () => {
             </div>
             <div className={styles.middle}>
               <div className={styles.price}>
-                <p className={styles.currPrice}>39 USD</p>
-                <p className={styles.oldPrice}>45 USD</p>
+                <p className={styles.currPrice}>{specificProduct.price} USD</p>
+                <p className={styles.oldPrice}>{specificProduct.old_price} USD</p>
               </div>
               <button className="btn btn-colored btn-s">Add to cart</button>
             </div>
@@ -59,10 +60,7 @@ const ProductDetails = () => {
             </button>
             <p className={styles.desc}>Description</p>
             <p className={styles.lDesc}>
-              We work hard to ensure that the fruit and vegetables we sell are
-              fresh and high in quality. If we don’t grow them ourselves, we
-              source them from carefully chosen suppliers, preferring to buy
-              locally whenever possible.
+              {specificProduct.l_desc}
             </p>
           </div>
         </dev>
