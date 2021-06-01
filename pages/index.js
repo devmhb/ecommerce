@@ -5,45 +5,54 @@ import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import ProductsContainer from "../components/ProductsContainer/ProductsContainer";
 import styles from "../styles/Home.module.scss";
-import products from "../products.json";
 import Link from "next/link";
+import { API_URL } from "../utils/urls";
 
-export default function Home() {
-  const categories = [];
-  products.map((product) => {
-    const category = product.category;
-    if (!categories.includes(category)) {
-      categories.push(category);
-    }
-  });
-
-  const featuredProducts = products.filter((product) => product.featured);
-
+export default function Home({ products, categories }) {
   return (
     <>
       <Head>
         <title>Ecommerce</title>
       </Head>
       <div className={styles.container}>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className={styles.header}>
-          <Categories />
+          <Categories categories={categories} />
           <BannersContainer />
         </div>
 
         <h4 className={styles.title}>Best Selling Products</h4>
-        <ProductsContainer featured={true} />
+        <ProductsContainer
+          products={products.filter((product) => product.featured === true)}
+        />
 
         {categories.map((category) => (
-          <div key={category}>
-            <Link href={`/category/${category}`}>
-              <h4 className={styles.title}>{category}</h4>
+          <div key={category.id}>
+            <Link href={`/category/${category.slug}`}>
+              <h4 className={styles.title}>{category.name}</h4>
             </Link>
-            <ProductsContainer category={category} />
+            {<ProductsContainer products={category.products} />}
           </div>
         ))}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Fetch the produtcs and categories
+  const products_res = await fetch(`${API_URL}/products`);
+  const products = await products_res.json();
+
+  const categories_res = await fetch(`${API_URL}/categories`);
+  const categories = await categories_res.json();
+
+  // Return the produtcs as props
+  return {
+    props: {
+      products,
+      categories,
+    },
+  };
 }

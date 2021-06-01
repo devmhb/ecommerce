@@ -1,33 +1,24 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../../styles/ProductDetails.module.scss";
-import NavBar from "../../components/NavBar/NavBar";
 import Image from "next/image";
-import Footer from "../../components/Footer/Footer";
-import products from "../../products.json";
-import { fromImgToUrl } from "../../utils/urls";
+import { fromImgToUrl, API_URL } from "../../utils/urls";
 
-const ProductDetails = () => {
-  const router = useRouter();
-  const { path } = router.query;
-
-  const specificProduct = products.find((product) => product.slug === path);
-
+const ProductDetails = ({ product }) => {
   return (
     <>
       <Head>
-        <title>{specificProduct.name}</title>
+        <title>{product.name}</title>
       </Head>
       <div className={styles.container}>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className={styles.productDetails}>
           <div className={styles.slider}>
-            <img src={fromImgToUrl(specificProduct.product_img)} />
+            <img src={fromImgToUrl(product.image)} />
           </div>
           <div className={styles.details}>
-            <h1 className={styles.title}>{specificProduct.name}</h1>
-            <p className={styles.sDesc}>{specificProduct.s_desc}</p>
+            <h1 className={styles.title}>{product.name}</h1>
+            <p className={styles.sDesc}>{product.s_desc}</p>
             <div className={styles.info}>
               <ul>
                 <li>SKU: </li>
@@ -48,10 +39,8 @@ const ProductDetails = () => {
             </div>
             <div className={styles.middle}>
               <div className={styles.price}>
-                <p className={styles.currPrice}>{specificProduct.price} USD</p>
-                <p className={styles.oldPrice}>
-                  {specificProduct.old_price} USD
-                </p>
+                <p className={styles.currPrice}>{product.price} USD</p>
+                <p className={styles.oldPrice}>{product.old_price} USD</p>
               </div>
               <button className="btn btn-colored btn-s">Add to cart</button>
             </div>
@@ -60,13 +49,38 @@ const ProductDetails = () => {
               Add to wish list
             </button>
             <p className={styles.desc}>Description</p>
-            <p className={styles.lDesc}>{specificProduct.l_desc}</p>
+            <p className={styles.lDesc}>{product.l_desc}</p>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
 };
 
 export default ProductDetails;
+
+export async function getStaticProps({ params: { slug } }) {
+  const product_res = await fetch(`${API_URL}/products/?slug=${slug}`);
+  const specificProduct = await product_res.json();
+
+  return {
+    props: {
+      product: specificProduct[0],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  // Retrive all the possible paths
+  const products_res = await fetch(`${API_URL}/products`);
+  const products = await products_res.json();
+
+  // Return then to nextjs context
+  return {
+    paths: products.map((product) => ({
+      params: { slug: String(product.slug) },
+    })),
+    fallback: false,
+  };
+}

@@ -10,7 +10,7 @@ const Account = () => {
         <title>Account</title>
       </Head>
       <div className={styles.account}>
-        <NavBar />
+        {/* <NavBar /> */}
         <h1>Account</h1>
       </div>
     </>

@@ -1,6 +1,9 @@
 .navBar {
   display: flex;
   flex-flow: column nowrap;
+  width: 90%;
+  max-width: 125rem;
+  margin: 0 auto;
 
   & .upper {
     display: flex;

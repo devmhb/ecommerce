@@ -12,7 +12,7 @@ const Cart = () => {
         <title>Cart</title>
       </Head>
       <div className={styles.cart}>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className={styles.wrapper}>
           <div className={styles.cartItems}>
             <div className={styles.text}>
@@ -47,7 +47,7 @@ const Cart = () => {
             </button>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

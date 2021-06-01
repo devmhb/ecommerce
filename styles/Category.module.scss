@@ -1,21 +1,22 @@
 .category {
-    width: 90%;
+  width: 90%;
   max-width: 125rem;
   margin: 0 auto;
 
   & .header {
-      height: 50vh;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
+    height: 50vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 
     & h1 {
       font: var(--f1);
       margin-bottom: 1.6rem;
+      text-transform: capitalize;
     }
 
     & p {
-        font: var(--body);
+      font: var(--body);
     }
   }
 }

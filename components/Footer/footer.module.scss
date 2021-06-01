@@ -2,7 +2,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin-top: 8rem;
+  width: 90%;
+  max-width: 125rem;
+  margin: 8rem auto 0;
 
   & .col {
     & .title {

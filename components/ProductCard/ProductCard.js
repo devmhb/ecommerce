@@ -13,19 +13,19 @@ const ProductCard = ({ product }) => {
     margin: "1.2rem",
   };
 
-  console.log(product.product_img.url);
-
   return (
     <Link href={`/product/${product.slug}`}>
       <div className={styles.productCard}>
         <div className={styles.productImg}>
-          <div className="tag tag-colored tag-s" style={tagStyles}>
-            - 36%
-          </div>
+          {product.offer && (
+            <div className="tag tag-colored tag-s" style={tagStyles}>
+              - {product.offer}%
+            </div>
+          )}
           <div className={styles.imgWrapper}>
             <img
               className={styles.img}
-              src={fromImgToUrl(product.product_img)}
+              src={fromImgToUrl(product.image)}
               alt="product"
             />
           </div>
