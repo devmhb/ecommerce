@@ -24,7 +24,6 @@ export default function Home({ products, categories }) {
         <title>Ecommerce</title>
       </Head>
       <div className={styles.container}>
-        {/* <NavBar /> */}
         <div className={styles.header}>
           <Categories categories={categories} />
           <BannersContainer />
@@ -33,6 +32,7 @@ export default function Home({ products, categories }) {
         <h4 className={styles.title}>Best Selling Products</h4>
         <ProductsContainer
           products={products.filter((product) => product.featured === true)}
+          visible={4}
         />
 
         {categories.map((category) => (
@@ -40,10 +40,9 @@ export default function Home({ products, categories }) {
             <Link href={`/category/${category.slug}`}>
               <h4 className={styles.title}>{category.name}</h4>
             </Link>
-            {<ProductsContainer products={category.products} />}
+            {<ProductsContainer products={category.products} visible={4} />}
           </div>
         ))}
-        {/* <Footer /> */}
       </div>
     </>
   );

@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import styles from "../../styles/Category.module.scss";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
 import { API_URL } from "../../utils/urls";
 
 const Category = ({ categories }) => {
+  const [visible, setVisible] = useState(8);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 8);
+    console.log("Clicked");
+  };
+
   return (
     <>
       <Head>
         <title>{categories.name}</title>
       </Head>
       <div className={styles.category}>
-        {/* <NavBar /> */}
         <header className={styles.header}>
           <h1>{categories.name}</h1>
           <p>
@@ -20,8 +26,16 @@ const Category = ({ categories }) => {
             doloremque iste quam.
           </p>
         </header>
-        <ProductsContainer products={categories.products} />
-        {/* <Footer /> */}
+        <ProductsContainer products={categories.products} visible={visible} />
+        {visible >= categories.products.length ? null : (
+          <button
+            className="btn btn-stroke btn-s"
+            onClick={showMoreItems}
+            disabled={visible >= categories.products.length}
+          >
+            Load More...
+          </button>
+        )}
       </div>
     </>
   );

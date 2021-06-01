@@ -1,0 +1,10 @@
+$brL: 1200px;
+$brM: 900px;
+$brS: 700px;
+$brXS: 400px;
+
+@mixin mq($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

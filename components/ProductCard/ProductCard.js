@@ -23,10 +23,12 @@ const ProductCard = ({ product }) => {
             </div>
           )}
           <div className={styles.imgWrapper}>
-            <img
+            <Image
               className={styles.img}
-              src={fromImgToUrl(product.image)}
+              src={`${fromImgToUrl(product.image)}`}
               alt="product"
+              width={500}
+              height={500}
             />
           </div>
         </div>

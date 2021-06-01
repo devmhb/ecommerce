@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useUser } from "@auth0/nextjs-auth0";
 import styles from "../../styles/Account.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const Account = () => {
   const { user, error, isLoading } = useUser();
@@ -22,7 +23,13 @@ const Account = () => {
         {user && (
           <>
             <div className={styles.left}>
-              <img src={user.picture} alt="user" className={styles.avatar} />
+              <Image
+                src={user.picture}
+                alt="user"
+                className={styles.avatar}
+                width={100}
+                height={100}
+              />
               <h2 className={styles.userName}>{user.name}</h2>
               <button className="btn btn-bright btn-s" style={btnStyle}>
                 Dashboard

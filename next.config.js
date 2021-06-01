@@ -1,12 +1,5 @@
 module.exports = {
-  // i18n: {
-  //   locales: ['en-US', 'it'],
-  //   defaultLocale: 'it',
-  //   domains: [
-  //     {
-  //       domain: 'http://localhost:3000/',
-  //       defaultLocale: 'it',
-  //     }
-  //   ]
-  // }
+  images: {
+    domains: ["localhost", "lh3.googleusercontent.com"],
+  },
 };

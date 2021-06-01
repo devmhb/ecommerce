@@ -6,6 +6,7 @@
 
 .header {
   display: flex;
+  flex-flow: row wrap;
   gap: 4rem;
   margin-bottom: 6rem;
 }

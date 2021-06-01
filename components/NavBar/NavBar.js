@@ -34,7 +34,7 @@ const NavBar = () => {
       </div>
       <div className={styles.middle}>
         <Link href="/">
-          <a className={styles.logo}>AMAZON</a>
+          <a className={styles.logo}>UBER</a>
         </Link>
         <div className={styles.search}>
           <input

@@ -11,10 +11,14 @@ const ProductDetails = ({ product }) => {
         <title>{product.name}</title>
       </Head>
       <div className={styles.container}>
-        {/* <NavBar /> */}
         <div className={styles.productDetails}>
           <div className={styles.slider}>
-            <img src={fromImgToUrl(product.image)} />
+            <Image
+              src={fromImgToUrl(product.image)}
+              alt="product"
+              width={800}
+              height={800}
+            />
           </div>
           <div className={styles.details}>
             <h1 className={styles.title}>{product.name}</h1>
@@ -52,7 +56,6 @@ const ProductDetails = ({ product }) => {
             <p className={styles.lDesc}>{product.l_desc}</p>
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );

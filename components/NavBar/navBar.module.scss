@@ -1,3 +1,5 @@
+@use "../../styles/mixins";
+
 .navBar {
   display: flex;
   flex-flow: column nowrap;
@@ -11,6 +13,10 @@
     justify-content: space-between;
     border-bottom: 1px solid var(--c1E);
     padding: 1.6rem 0;
+
+    @include mixins.mq(mixins.$brS) {
+      display: none;
+    }
 
     & .left {
       display: flex;
@@ -40,8 +46,10 @@
     align-items: center;
     padding: 4rem 0;
     margin-bottom: 2rem;
-    // position: sticky;
-    // top: 0;
+
+    @include mixins.mq(mixins.$brS) {
+      padding: 3rem 0;
+    }
 
     & .logo {
       color: var(--c1A);
@@ -76,6 +84,10 @@
 
       & :not(.icon:last-child) {
         margin-right: 2.5rem;
+
+        @include mixins.mq(mixins.$brXS) {
+          margin-right: 0.5rem;
+        }
       }
     }
   }

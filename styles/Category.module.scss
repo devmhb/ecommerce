@@ -2,6 +2,9 @@
   width: 90%;
   max-width: 125rem;
   margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 
   & .header {
     height: 50vh;

@@ -1,3 +1,5 @@
+@use "../../styles/mixins";
+
 .footer {
   display: flex;
   flex-flow: row wrap;
@@ -5,6 +7,10 @@
   width: 90%;
   max-width: 125rem;
   margin: 8rem auto 0;
+
+  @include mixins.mq(mixins.$brS) {
+    flex-flow: column wrap;
+  }
 
   & .col {
     & .title {
