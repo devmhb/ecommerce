@@ -3,7 +3,6 @@ import NavBar from "../../components/NavBar/NavBar";
 import OrderedProduct from "../../components/OrderedProduct/OrderedProduct";
 import styles from "../../styles/Cart.module.scss";
 import Head from "next/head";
-import Footer from "../../components/Footer/Footer";
 
 const Cart = () => {
   return (
@@ -12,7 +11,6 @@ const Cart = () => {
         <title>Cart</title>
       </Head>
       <div className={styles.cart}>
-        {/* <NavBar /> */}
         <div className={styles.wrapper}>
           <div className={styles.cartItems}>
             <div className={styles.text}>
@@ -47,7 +45,6 @@ const Cart = () => {
             </button>
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );

@@ -1,14 +1,23 @@
 import Head from "next/head";
 import BannersContainer from "../components/BannersContainer/BannersContainer";
 import Categories from "../components/Categories/Categories";
-import Footer from "../components/Footer/Footer";
-import NavBar from "../components/NavBar/NavBar";
 import ProductsContainer from "../components/ProductsContainer/ProductsContainer";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 import { API_URL } from "../utils/urls";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function Home({ products, categories }) {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) {
+    return <h1>Loading</h1>;
+  }
+
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
+
   return (
     <>
       <Head>

@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./navBar.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { useUser } from "@auth0/nextjs-auth0";
 
 const NavBar = () => {
+  const { user, error, isLoading } = useUser();
+
   return (
     <nav className={styles.navBar}>
       <div className={styles.upper}>
@@ -43,9 +46,23 @@ const NavBar = () => {
         </div>
         <div className={styles.navIcons}>
           <div className={styles.icon}>
-            <Link href="/account">
-              <Image src="/icons/ic-actions-user.svg" width={25} height={25} />
-            </Link>
+            {user ? (
+              <Link href="/account">
+                <Image
+                  src="/icons/ic-actions-user.svg"
+                  width={25}
+                  height={25}
+                />
+              </Link>
+            ) : (
+              <Link href="/api/auth/login">
+                <Image
+                  src="/icons/ic-actions-user.svg"
+                  width={25}
+                  height={25}
+                />
+              </Link>
+            )}
           </div>
           <div className={styles.icon}>
             <Link href="/cart">
