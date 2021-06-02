@@ -29,6 +29,8 @@ const ProductCard = ({ product }) => {
               alt="product"
               width={500}
               height={500}
+              layout="responsive"
+              objectFit="cover"
             />
           </div>
         </div>
